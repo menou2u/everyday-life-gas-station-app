@@ -1,0 +1,1 @@
+This app intends to locate gas stations and have their distance according to price for example.
