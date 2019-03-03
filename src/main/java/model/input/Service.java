@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
@@ -13,5 +15,5 @@ import lombok.NoArgsConstructor;
 public class Service {
 
     @JsonProperty("service")
-    private String[] allServices = null;
+    private List<String> allServices = null;
 }

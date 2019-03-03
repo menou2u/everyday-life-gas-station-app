@@ -10,7 +10,7 @@ public class Station {
 
     private Position position;
 
-    private List<Carburant> availableCarburants;
+    private List<Fuel> availableCarburants;
 
     private List<Service> availableServices;
 }

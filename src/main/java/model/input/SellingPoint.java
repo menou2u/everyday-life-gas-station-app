@@ -1,11 +1,14 @@
 package model.input;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import lombok.Data;
-import service.deserializers.PrixDeserializer;
-import service.deserializers.ServiceDeserializer;
+import service.deserializers.PriceJsonTagDeserializer;
+import service.deserializers.ServiceJsonTagDeserializer;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -15,14 +18,14 @@ public class SellingPoint {
     private String pop;
 
     @JsonProperty("ville")
-    private String ville;
+    private String city;
 
     @JsonProperty("horaires")
-    private Horaires horaires;
+    private OpeningTimes openingTimes;
 
     @JsonProperty("prix")
-    @JsonDeserialize(using = PrixDeserializer.class)
-    private Prix[] allPrix;
+    @JsonDeserialize(using = PriceJsonTagDeserializer.class)
+    private List<Price> allPrices;
 
     @JsonProperty("latitude")
     private Number latitude;
@@ -31,7 +34,7 @@ public class SellingPoint {
     private Number longitude;
 
     @JsonProperty(value = "services")
-    @JsonDeserialize(using = ServiceDeserializer.class)
+    @JsonDeserialize(using = ServiceJsonTagDeserializer.class)
     private Service services;
 
 }

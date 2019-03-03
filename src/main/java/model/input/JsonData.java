@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class JsonResponse {
+public class JsonData {
 
     @JsonProperty("pdv_liste")
     private SellingPoints sellingsPoints;

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ServiceDeserializer extends JsonDeserializer<Service> {
+public class ServiceJsonTagDeserializer extends JsonDeserializer<Service> {
 
     private static final String SERVICE = "service";
 
@@ -29,6 +29,6 @@ public class ServiceDeserializer extends JsonDeserializer<Service> {
         while (elements.hasNext()) {
             allServices.add(elements.next().textValue());
         }
-        return new Service(allServices.toArray(new String[allServices.size()]));
+        return new Service(allServices);
     }
 }

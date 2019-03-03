@@ -4,21 +4,21 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
-import service.deserializers.PeriodeDeserializer;
+import service.deserializers.PeriodeJsonTagDeserializer;
 
 import java.util.Collection;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class HoraireJournee {
+public class DayOpeningTime {
 
     @JsonProperty("horaire")
-    @JsonDeserialize(using = PeriodeDeserializer.class)
-    private Collection<Periode> periodes;
+    @JsonDeserialize(using = PeriodeJsonTagDeserializer.class)
+    private Collection<Period> periods;
 
     @JsonProperty("ferme")
     private String ferme;
 
     @JsonProperty("nom")
-    private String jour;
+    private String day;
 }

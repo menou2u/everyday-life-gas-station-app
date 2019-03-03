@@ -3,8 +3,7 @@ package service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import model.Station;
-import model.input.JsonResponse;
-import org.json.JSONObject;
+import model.input.JsonData;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,11 +13,13 @@ import java.util.List;
 @Data
 public class StationsMapper {
 
-    public List<Station> getAllStations(JSONObject jsonObject) {
+    public List<Station> getAllStations() {
         ObjectMapper objectMapper = new ObjectMapper();
-        JsonResponse map = new JsonResponse();
+        JsonData map = new JsonData();
         try {
-            map = objectMapper.readValue(new File("C:\\Users\\t553678\\Downloads\\output.json"), JsonResponse.class);
+
+            System.out.println(new java.io.File("").getAbsolutePath());
+            map = objectMapper.readValue(new File("src/main/resources/output.json"), JsonData.class);
         } catch (IOException e) {
             e.printStackTrace();
         }

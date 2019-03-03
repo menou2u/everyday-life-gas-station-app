@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
-public class Prix {
+public class Price {
 
     @JsonProperty("valeur")
     private Double prix;

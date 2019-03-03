@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Horaires {
+public class OpeningTimes {
 
     @JsonProperty("jour")
-    private HoraireJournee[] horaireJournees;
+    private DayOpeningTime[] dayOpeningTimes;
 }

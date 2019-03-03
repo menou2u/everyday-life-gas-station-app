@@ -4,15 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class Carburant {
+public class Fuel {
 
     @JsonProperty("nom")
-    private CarburantNameEnum carburantName;
+    private FuelNameEnum fuelName;
 
     @JsonProperty("valeur")
     private Double price;
 
-    public enum CarburantNameEnum {
+    public enum FuelNameEnum {
         GAZOLE, E85, E10, SP98;
     }
 
